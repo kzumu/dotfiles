@@ -6,6 +6,11 @@
 
 - link:
     ~/.vimrc: .vimrc
+    ~/.zshrc: .zshrc
+    ~/.bashrc: .bashrc
+    ~/.bash_profile: .bash_profile
+    ~/.gitignore_global: .gitignore_global
+    
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
