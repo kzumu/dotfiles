@@ -141,11 +141,6 @@ autoload -Uz add-zsh-hook
 add-zsh-hook preexec hoge
 export PATH=$HOME/.GitRPG-master:$PATH
 
-# pyenv
-export PYENV_ROOT=$HOME/.pyenv
-export PATH=$PYENV_ROOT/bin:$PATH
-eval "$(pyenv init -)"
-
 if which swiftenv > /dev/null; then eval "$(swiftenv init -)"; fi
 
 function git(){hub "$@"}
