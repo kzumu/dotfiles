@@ -162,3 +162,8 @@ function openxc() {
         echo "xcode file does not exist."
     fi
 }
+
+# chruby
+source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
+
