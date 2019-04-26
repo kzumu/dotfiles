@@ -86,3 +86,7 @@ colorscheme  gruvbox
 syntax enable
 hi MatchParen cterm=bold ctermbg=239 ctermfg=177
 hi Search ctermbg=177 ctermfg=239
+
+" スペースの可視化
+set list
+set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
