@@ -11,8 +11,11 @@
     ~/.bash_profile: .bash_profile
     ~/.gitignore_global: .gitignore_global
     ~/.config/peco/config.json:
-        path: .peco.config.json
+        path: .config/peco/config.json
         create: true
+    ~/.hammerspoon/init.lua:
+        path: .hammerspoon/init.lua
+        force: true
     
 
 - shell:
