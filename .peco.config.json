@@ -1,0 +1,6 @@
+{
+    "Style": {
+        "Basic": ["on_default", "default"],
+        "Selected": ["white", "on_black"]
+    }
+}

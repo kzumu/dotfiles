@@ -10,6 +10,9 @@
     ~/.bashrc: .bashrc
     ~/.bash_profile: .bash_profile
     ~/.gitignore_global: .gitignore_global
+    ~/.config/peco/config.json:
+        path: .peco.config.json
+        create: true
     
 
 - shell:
