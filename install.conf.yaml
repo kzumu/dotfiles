@@ -22,6 +22,6 @@
   - [git submodule update --init --recursive, Installing submodules]
   - [brew tap Homebrew/bundle, Installing for using Brewfile]
   - [brew bundle]
-  - [git config --global --add ghq.root $GOPATH/src, Set ghq repository path]
+  - [git config --global --replace-all ghq.root $GOPATH/src, Set ghq repository path]
   - [mkdir -p ~/go/src/github.com]
 
