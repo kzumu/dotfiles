@@ -15,7 +15,7 @@
         create: true
     ~/.hammerspoon/init.lua:
         path: .hammerspoon/init.lua
-        force: true
+        create: true
     
 
 - shell:
