@@ -21,9 +21,18 @@ nnoremap <C-h> <Home>
 nnoremap <C-l> <End>
 nnoremap : ;
 nnoremap ; :
+noremap <silent> <ESC><ESC> :noh<CR>
 
-nnoremap j gj
-nnoremap k gk
+"virtualモードの時にスターで選択位置のコードを検索するようにする"
+xnoremap * :<C-u>call <SID>VSetSearch()<CR>/<C-R>=@/<CR><CR>
+xnoremap # :<C-u>call <SID>VSetSearch()<CR>?<C-R>=@/<CR><CR>
+function! s:VSetSearch()
+  let temp = @s
+  norm! gv"sy
+  let @/ = '\V' . substitute(escape(@s, '/\'), '\n', '\\n', 'g')
+  let @s = temp
+endfunction
+
 set showmatch
 set matchtime=1
 set matchpairs& matchpairs+=<:>
