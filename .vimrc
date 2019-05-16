@@ -1,8 +1,6 @@
 "autocmd BufNewFild,BufRead *.vue setfiletype vue
 
 " insert mode
-inoremap <C-a> <Home>
-inoremap <C-e> <End>
 inoremap <C-d> <Del>
 inoremap <C-h> <BS>
 nnoremap <expr> gr ':Rgrep<CR>'
@@ -19,6 +17,10 @@ nnoremap <leader>w :wa<cr>
 nnoremap <leader>k :bd<cr>
 nnoremap <leader>r :source ~/.vimrc<cr>
 nnoremap <leader>n :Ex.<CR>
+nnoremap <C-h> <Home>
+nnoremap <C-l> <End>
+nnoremap : ;
+nnoremap ; :
 
 nnoremap j gj
 nnoremap k gk
