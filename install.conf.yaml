@@ -16,7 +16,7 @@
         create: true
     ~/.hammerspoon/init.lua:
         path: .hammerspoon/init.lua
-        force: true
+        create: true
     
 
 - shell:
@@ -25,4 +25,4 @@
   - [brew bundle]
   - [git config --global --replace-all ghq.root $GOPATH/src, Set ghq repository path]
   - [mkdir -p ~/go/src/github.com]
-
+  - ["curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim", Install Plug for vim]
