@@ -17,8 +17,8 @@ nnoremap <leader>w :wa<cr>
 nnoremap <leader>k :bd<cr>
 nnoremap <leader>r :source ~/.vimrc<cr>
 nnoremap <leader>n :Ex.<CR>
-nnoremap <C-h> <Home>
-nnoremap <C-l> <End>
+nnoremap <C-h> <S-^> 
+nnoremap <C-l> <S-$>
 nnoremap : ;
 nnoremap ; :
 noremap <silent> <ESC><ESC> :noh<CR>
