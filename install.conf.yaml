@@ -16,8 +16,9 @@
     ~/.config/peco/config.json:
         path: .config/peco/config.json
         create: true
-    ~/.hammerspoon/init.lua:
-        path: .hammerspoon/init.lua
+    ~/.hammerspoon:
+        path: .hammerspoon
+        force: true
         create: true
     
 
