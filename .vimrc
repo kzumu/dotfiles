@@ -22,6 +22,8 @@ nnoremap <C-l> <S-$>
 nnoremap : ;
 nnoremap ; :
 noremap <silent> <ESC><ESC> :noh<CR>
+" 改行を挿入してコマンドモードを維持 https://vim-jp.org/vim-users-jp/2009/08/15/Hack-57.html
+nnoremap <C-o> :<C-u>call append(expand('.'), '')<Cr>j
 
 "virtualモードの時にスターで選択位置のコードを検索するようにする"
 xnoremap * :<C-u>call <SID>VSetSearch()<CR>/<C-R>=@/<CR><CR>
