@@ -7,7 +7,9 @@
 - link:
     ~/.vimrc: .vimrc
     ~/.xvimrc: .vimrc
-    ~/.zshrc: .zshrc
+    ~/.zshrc: 
+        path: .zshrc
+        force: true
     ~/.bashrc: .bashrc
     ~/.bash_profile: .bash_profile
     ~/.gitignore_global: .gitignore_global
