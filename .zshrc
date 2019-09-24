@@ -118,6 +118,7 @@ alias gc='git checkout'
 alias gpu='git pull'
 alias gs='git status'
 alias gcam='git commit -a -m'
+alias today='date "+%Y%m%d"'
 export TOP_PAGE_URL="http://localhost:8080"
 export PORT=3000
 
@@ -167,3 +168,4 @@ function openxc() {
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
 
+export XCODE_DEVELOPER_DIR_PATH=/Applications/Xcode.app/Contents/Developer
