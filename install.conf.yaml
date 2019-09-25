@@ -26,7 +26,14 @@
     ~/.ctags:
         path: .ctags
         create: true
-    
+    ~/.SpaceVim/vimrc:
+        path: .SpaceVim/vimrc
+        force: true
+        create: true
+    ~/.SpaceVim.d/init.toml:
+        path: .SpaceVim.d/init.toml
+        force: true
+        create: true
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

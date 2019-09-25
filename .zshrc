@@ -34,7 +34,7 @@ export ZSH_HISTORY_KEYBIND_ARROW_DOWN="^n"
 export ZSH=$HOME/.oh-my-zsh
 export NVM_DIR="$HOME/.nvm"
 
-ZSH_THEME="random"
+ZSH_THEME="avit"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -42,16 +42,15 @@ ZSH_THEME="random"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
+# zsh-autosuggestions https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md
+plugins=(zsh-autosuggestions)
+
 source $ZSH/oh-my-zsh.sh
 # chruby
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# zsh-autosuggestions https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
 
 function peco-ghq-cd () {
     local selected_dir=$(ghq list | peco --query "$LBUFFER")
@@ -75,6 +74,8 @@ alias gpu='git pull'
 alias gs='git status'
 alias gcam='git commit -a -m'
 alias today='date +%Y%m%d'
+alias g='git'
+alias ga='g add'
 
 if which swiftenv > /dev/null; then eval "$(swiftenv init -)"; fi
 
