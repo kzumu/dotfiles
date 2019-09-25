@@ -48,7 +48,7 @@ end
 
 local function unsplashRequest()
     local user_agent_str = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/603.2.4 (KHTML, like Gecko) Version/10.1.1 Safari/603.2.4"
-    obj.pic_url = hs.execute([[ /usr/bin/curl 'https://source.unsplash.com/2560x1600/?wallpaper' |  perl -ne ' print "$1" if /href="([^"]+)"/ ' ]])
+    obj.pic_url = hs.execute([[ /usr/bin/curl 'https://source.unsplash.com/3000x2000/?view' |  perl -ne ' print "$1" if /href="([^"]+)"/ ' ]])
     if obj.last_pic ~= obj.pic_url then
         if obj.task then
             obj.task:terminate()
@@ -63,7 +63,7 @@ end
 hs.timer.doEvery(2*60*60, function() unsplashRequest() end)
 
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "W", function()
-  hs.alert.show("Get wallpaper from unsplash.com")
+  hs.alert.show("Get wallpaper from source.unsplash.com/3000x2000/?view")
   unsplashRequest()
 end)
 

@@ -1,0 +1,45 @@
+# https://starship.rs/config/#command-duration
+
+prompt_order = [
+    "username",
+    "hostname",
+    "directory",
+    "git_branch",
+    "git_state",
+    "git_status",
+    "package",
+    "nix_shell",
+    "line_break",
+    "jobs",
+    "time",
+    "battery",
+    "character",
+]
+
+# Replace the "❯" symbol in the prompt with "➜"
+[character]      # The name of the module we are confguring is "character"
+symbol = "➜"     # The "symbol" segment is being set to "➜"
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+
+[git_branch]
+symbol = ""
+
+[git_status]
+conflicted = "🏳"
+ahead = "🏎💨"
+behind = "😰"
+diverged = "😵"
+untracked = "🤷‍"
+stashed = "📦"
+modified = "📝"
+staged = "➕"
+renamed = "👅"
+deleted = "🗑"
+
+[directory]
+truncation_length = 8
+truncate_to_repo = false
+fish_style_pwd_dir_length = 4

@@ -111,13 +111,14 @@ bindkey '^f' peco-ghq-cd
 alias cdpj=$HOME/Documents/Project
 alias cdgo='cd $GOPATH/src/github.com/kzumu'
 alias be='bundle exec'
-alias gcm='git commit -m'
+alias gcm='git commit'
 alias gd='git diff'
 alias gds='git diff --staged'
-alias gc='git checkout'
+alias gch='git checkout'
 alias gpu='git pull'
 alias gs='git status'
 alias gcam='git commit -a -m'
+alias today='date +%Y%m%d'
 export TOP_PAGE_URL="http://localhost:8080"
 export PORT=3000
 
@@ -167,3 +168,72 @@ function openxc() {
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
 
+# Zsh history https://github.com/b4b4r07/zsh-history
+# DB file path
+export ZSH_HISTORY_FILE="$HOME/.zsh_history.db"
+# CLI selector
+export ZSH_HISTORY_FILTER="fzy:fzf:peco:percol"
+# History per directory
+export ZSH_HISTORY_KEYBIND_GET_BY_DIR="^r"
+# All histories
+export ZSH_HISTORY_KEYBIND_GET_ALL="^r^a"
+# Run any SQLs on original selector I/F (with screen)
+export ZSH_HISTORY_KEYBIND_SCREEN="^r^r"
+# substring
+export ZSH_HISTORY_KEYBIND_ARROW_UP="^p"
+export ZSH_HISTORY_KEYBIND_ARROW_DOWN="^n"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# zsh-autosuggestions https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+##################################################################################
+# Show stash count  https://qiita.com/Cside/items/13f85c11d3d0aa35d7ef
+# function git_prompt_stash_count {
+#   local COUNT=$(git stash list 2>/dev/null | wc -l | tr -d ' ')
+#   if [ "$COUNT" -gt 0 ]; then
+#     echo " ($COUNT)"
+#   fi
+# }
+# 
+# setopt prompt_subst
+# autoload -Uz VCS_INFO_get_data_git; VCS_INFO_get_data_git 2> /dev/null
+# 
+# function rprompt-git-current-branch {
+#   local name st color action
+# 
+#   if [[ "$PWD" =~ '/\.git(/.*)?$' ]]; then
+#     return
+#   fi
+# 
+#   name=$(basename "`git symbolic-ref HEAD 2> /dev/null`")
+#   if [[ -z $name ]]; then
+#     return
+#   fi
+# 
+#   st=`git status 2> /dev/null`
+#   if [[ -n `echo "$st" | grep "^nothing to"` ]]; then
+#     color=${fg[blue]}
+#   elif [[ -n `echo "$st" | grep "^nothing added"` ]]; then
+#     color=${fg[yellow]}
+#   elif [[ -n `echo "$st" | grep "^# Untracked"` ]]; then
+#     color=${fg_bold[red]}
+#   else
+#     color=${fg[red]}
+#   fi
+# 
+#   gitdir=`git rev-parse --git-dir 2> /dev/null`
+#   action=`VCS_INFO_git_getaction "$gitdir"` && action="($action)"
+# 
+#   # %{...%} surrounds escape string
+#   echo "%{$color%}$name$action`git_prompt_stash_count`$color%{$reset_color%}"
+# }
+# 
+# # how to use
+# PROMPT='`rprompt-git-current-branch`'
+# 
+##################################################################################
+
+# https://github.com/starship/starship
+eval "$(starship init zsh)"

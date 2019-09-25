@@ -7,3 +7,5 @@ PERL_MB_OPT="--install_base \"/Users/kaz/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/kaz/perl5"; export PERL_MM_OPT;
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 export GOPATH=$HOME/go
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
