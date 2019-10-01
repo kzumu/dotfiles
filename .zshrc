@@ -76,6 +76,7 @@ alias gcam='git commit -a -m'
 alias today='date +%Y%m%d'
 alias g='git'
 alias ga='g add'
+alias recentfile='ls -t | head -1'
 
 if which swiftenv > /dev/null; then eval "$(swiftenv init -)"; fi
 
