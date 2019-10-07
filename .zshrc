@@ -1,19 +1,19 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=/usr/bin/:$PATH
 export XCODE_DEVELOPER_DIR_PATH=/Applications/Xcode.app/Contents/Developer
-
 export RBENV_ROOT=$HOME/local/rbenv
-export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
-export PATH=$RBENV_ROOT/bin:$HOME/local/bin:$PATH
-export PATH=$HOME/.nodebrew/current/bin:$PATH
-export PATH=$PATH:/usr/local/go/bin
-export PATH=$GOPATH/bin:$PATH
 export GOPATH=$HOME/go
 export TOP_PAGE_URL="http://localhost:8080"
 export PORT=3000
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=/usr/bin/:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=$RBENV_ROOT/bin:$HOME/local/bin:$PATH
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+export PATH=/usr/local/go/bin/:$PATH
+export PATH=$GOPATH/bin:$PATH
 export PATH=/Users/kaz/go/src/github.com/flutter/flutter/bin:$PATH
 export PATH=/Users/kaz/Library/Developer/Xamarin/android-sdk-macosx/platform-tools:$PATH
+
 
 # Zsh history https://github.com/b4b4r07/zsh-history
 # DB file path
@@ -34,6 +34,9 @@ export ZSH_HISTORY_KEYBIND_ARROW_DOWN="^n"
 export ZSH=$HOME/.oh-my-zsh
 export NVM_DIR="$HOME/.nvm"
 
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
+
 ZSH_THEME="avit"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
@@ -42,8 +45,7 @@ ZSH_THEME="avit"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
-# zsh-autosuggestions https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md
-plugins=(zsh-autosuggestions)
+zplug "zsh-users/zsh-autosuggestions"
 
 source $ZSH/oh-my-zsh.sh
 # chruby
@@ -77,11 +79,9 @@ alias today='date +%Y%m%d'
 alias g='git'
 alias ga='g add'
 alias recentfile='ls -t | head -1'
+eval "$(hub alias -s zsh)"
 
 if which swiftenv > /dev/null; then eval "$(swiftenv init -)"; fi
-
-function git(){hub "$@"}
-
 
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
