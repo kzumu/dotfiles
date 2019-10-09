@@ -34,8 +34,8 @@ export ZSH_HISTORY_KEYBIND_ARROW_DOWN="^n"
 export ZSH=$HOME/.oh-my-zsh
 export NVM_DIR="$HOME/.nvm"
 
-export ZPLUG_HOME=/usr/local/opt/zplug
-source $ZPLUG_HOME/init.zsh
+# export ZPLUG_HOME=/usr/local/opt/zplug
+# source $ZPLUG_HOME/init.zsh
 
 ZSH_THEME="avit"
 
@@ -45,7 +45,8 @@ ZSH_THEME="avit"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
-zplug "zsh-users/zsh-autosuggestions"
+plugins=(zsh-autosuggestions)
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
 
 source $ZSH/oh-my-zsh.sh
 # chruby
@@ -76,6 +77,7 @@ alias gpu='git pull'
 alias gs='git status'
 alias gcam='git commit -a -m'
 alias today='date +%Y%m%d'
+alias yesterday='date -v -1d +%Y%m%d'
 alias g='git'
 alias ga='g add'
 alias recentfile='ls -t | head -1'

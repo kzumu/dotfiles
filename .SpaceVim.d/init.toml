@@ -27,6 +27,7 @@
     statusline_unicode_symbols = false
     # Enable vim compatible mode, avoid changing origin vim key bindings
     vimcompatible = true
+    bootstrap_after = "myconfig#after"
 
 # Enable autocomplete layer
 [[layers]]
@@ -44,27 +45,26 @@ name = "lang#swift"
 
 # This is an example for adding custom plugins lilydjwg/colorizer
 [[custom_plugins]]
-    name = "lilydjwg/colorizer"
-    merged = false
+  name = "lilydjwg/colorizer"
 
 [[custom_plugins]]
-    name = "fatih/vim-go"
-    merged = false
+  name = "fatih/vim-go"
 
 [[custom_plugins]]
-    name = "ctrlpvim/ctrlp.vim"
-    merged = false
+  name = "ctrlpvim/ctrlp.vim"
 
 ### Markdown preview
 [[custom_plugins]]
-    name = 'tpope/vim-markdown'
-    merged = false
+  name = 'tpope/vim-markdown'
 
 [[custom_plugins]]
-    name = 'kannokanno/previm'
-    merged = false
+  name = 'kannokanno/previm'
 
 [[custom_plugins]]
-    name = 'tyru/open-browser.vim'
-    merged = false
-### Markdown preview
+  name = 'tyru/open-browser.vim'
+
+[[custom_plugins]]
+  name = 'vim-scripts/surround.vim'
+
+[[custom_plugins]]
+  name = 'airblade/vim-gitgutter'
