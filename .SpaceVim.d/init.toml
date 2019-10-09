@@ -43,28 +43,37 @@ default_height = 30
 [[layers]]
 name = "lang#swift"
 
-# This is an example for adding custom plugins lilydjwg/colorizer
+# merged = false means don't merge plugin to default plugin directory.
+# https://github.com/Shougo/dein.vim/blob/master/doc/dein.txt#L632
 [[custom_plugins]]
   name = "lilydjwg/colorizer"
+  merged = false
 
 [[custom_plugins]]
   name = "fatih/vim-go"
+  merged = false
 
 [[custom_plugins]]
   name = "ctrlpvim/ctrlp.vim"
+  merged = false
 
 ### Markdown preview
 [[custom_plugins]]
   name = 'tpope/vim-markdown'
+  merged = false
 
 [[custom_plugins]]
   name = 'kannokanno/previm'
+  merged = false
 
 [[custom_plugins]]
   name = 'tyru/open-browser.vim'
+  merged = false
 
 [[custom_plugins]]
   name = 'vim-scripts/surround.vim'
+  merged = false
 
 [[custom_plugins]]
   name = 'airblade/vim-gitgutter'
+  merged = false
