@@ -14,6 +14,7 @@ export TOP_PAGE_URL="http://localhost:8080"
 export PORT=3000
 export PATH=/Users/kaz/go/src/github.com/flutter/flutter/bin:$PATH
 export PATH=/Users/kaz/Library/Developer/Xamarin/android-sdk-macosx/platform-tools:$PATH
+export PATH=/Users/kaz/Library/Developer/AndroidStudio/platform-tools:$PATH
 
 # Zsh history https://github.com/b4b4r07/zsh-history
 # DB file path
@@ -33,6 +34,7 @@ export ZSH_HISTORY_KEYBIND_ARROW_DOWN="^n"
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 export NVM_DIR="$HOME/.nvm"
+export ANDROID_HOME="/Users/kaz/Library/Developer/AndroidStudio"
 
 ZSH_THEME="avit"
 
@@ -44,6 +46,11 @@ plugins=(git)
 
 # zsh-autosuggestions https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md
 plugins=(zsh-autosuggestions)
+
+# 上手く行かなかった...
+# source ~/.zplug/init.zsh
+# zplug="zsh-users/zsh-autosuggestions"
+# zplug load --verbose
 
 source $ZSH/oh-my-zsh.sh
 # chruby
@@ -74,6 +81,7 @@ alias gpu='git pull'
 alias gs='git status'
 alias gcam='git commit -a -m'
 alias today='date +%Y%m%d'
+alias yesterday='date -v-1d +%Y%m%d'
 alias g='git'
 alias ga='g add'
 
