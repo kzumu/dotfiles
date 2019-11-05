@@ -14,3 +14,9 @@ endif
 
 nnoremap <C-h> ^
 nnoremap <C-l> $
+nnoremap Y y$
+
+set conceallevel=0
+set wrap
+set fenc=utf8
+set cursorcolumn
