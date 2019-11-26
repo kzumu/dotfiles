@@ -19,8 +19,6 @@ nnoremap <leader>r :source ~/.vimrc<cr>
 nnoremap <leader>n :Ex.<CR>
 nnoremap <C-h> <S-^> 
 nnoremap <C-l> <S-$>
-nnoremap : ;
-nnoremap ; :
 noremap <silent> <ESC><ESC> :noh<CR>
 " 改行を挿入してコマンドモードを維持 https://vim-jp.org/vim-users-jp/2009/08/15/Hack-57.html
 nnoremap <C-o> :<C-u>call append(expand('.'), '')<Cr>j
