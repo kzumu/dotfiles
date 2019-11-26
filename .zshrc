@@ -13,6 +13,7 @@ export PATH=/usr/local/go/bin/:$PATH
 export PATH=$GOPATH/bin:$PATH
 export PATH=/Users/kaz/go/src/github.com/flutter/flutter/bin:$PATH
 export PATH=/Users/kaz/Library/Developer/Xamarin/android-sdk-macosx/platform-tools:$PATH
+export PATH=/Users/kaz/Library/Developer/AndroidStudio/platform-tools:$PATH
 
 
 # Zsh history https://github.com/b4b4r07/zsh-history
@@ -33,6 +34,7 @@ export ZSH_HISTORY_KEYBIND_ARROW_DOWN="^n"
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 export NVM_DIR="$HOME/.nvm"
+export ANDROID_HOME="/Users/kaz/Library/Developer/AndroidStudio"
 
 # export ZPLUG_HOME=/usr/local/opt/zplug
 # source $ZPLUG_HOME/init.zsh
@@ -47,6 +49,11 @@ plugins=(git)
 
 plugins=(zsh-autosuggestions)
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
+
+# 上手く行かなかった...
+# source ~/.zplug/init.zsh
+# zplug="zsh-users/zsh-autosuggestions"
+# zplug load --verbose
 
 source $ZSH/oh-my-zsh.sh
 # chruby
@@ -78,7 +85,7 @@ alias gpu='git pull'
 alias gs='git status'
 alias gcam='git commit -a -m'
 alias today='date +%Y%m%d'
-alias yesterday='date -v -1d +%Y%m%d'
+alias yesterday='date -v-1d +%Y%m%d'
 alias g='git'
 alias ga='g add'
 alias recentfile='ls -t | head -1'
