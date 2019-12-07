@@ -58,6 +58,7 @@ source $ZSH/oh-my-zsh.sh
 # chruby
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
+source ~/.zplug/init.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
