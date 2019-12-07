@@ -15,7 +15,6 @@ export PATH=/Users/kaz/go/src/github.com/flutter/flutter/bin:$PATH
 export PATH=/Users/kaz/Library/Developer/Xamarin/android-sdk-macosx/platform-tools:$PATH
 export PATH=/Users/kaz/Library/Developer/AndroidStudio/platform-tools:$PATH
 
-
 # Zsh history https://github.com/b4b4r07/zsh-history
 # DB file path
 export ZSH_HISTORY_FILE="$HOME/.zsh_history.db"
@@ -110,3 +109,8 @@ function openxc() {
 eval "$(starship init zsh)"
 eval "$(rbenv init -)"
 
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/kaz/.google-cloud-sdk/path.zsh.inc' ]; then . '/Users/kaz/.google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/kaz/.google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/kaz/.google-cloud-sdk/completion.zsh.inc'; fi
