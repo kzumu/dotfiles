@@ -11,8 +11,6 @@
     # set spacevim theme. by default colorscheme layer is not loaded,
     # if you want to use more colorscheme, please load the colorscheme
     # layer
-    colorscheme = "onedark"
-    colorscheme_bg = "dark"
     # Disable guicolors in basic mode, many terminal do not support 24bit
     # true colors
     enable_guicolors = false
@@ -28,6 +26,8 @@
     # Enable vim compatible mode, avoid changing origin vim key bindings
     vimcompatible = true
     bootstrap_after = "myconfig#after"
+    colorscheme = "dogrun"
+    colorscheme_bg = "dark" 
 
 # Enable autocomplete layer
 [[layers]]
@@ -77,3 +77,8 @@ name = "lang#swift"
 [[custom_plugins]]
   name = 'airblade/vim-gitgutter'
   merged = false
+
+[[custom_plugins]]
+  name = 'wadackel/vim-dogrun'
+  merged = false
+

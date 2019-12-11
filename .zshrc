@@ -15,6 +15,8 @@ export PATH=/Users/kaz/go/src/github.com/flutter/flutter/bin:$PATH
 export PATH=/Users/kaz/Library/Developer/Xamarin/android-sdk-macosx/platform-tools:$PATH
 export PATH=/Users/kaz/Library/Developer/AndroidStudio/platform-tools:$PATH
 
+# CyberAgent
+export PATH=/Users/s06100/Library/Developer/Flutter/bin:$PATH
 
 # Zsh history https://github.com/b4b4r07/zsh-history
 # DB file path
@@ -36,9 +38,6 @@ export ZSH=$HOME/.oh-my-zsh
 export NVM_DIR="$HOME/.nvm"
 export ANDROID_HOME="/Users/kaz/Library/Developer/AndroidStudio"
 
-# export ZPLUG_HOME=/usr/local/opt/zplug
-# source $ZPLUG_HOME/init.zsh
-
 ZSH_THEME="avit"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
@@ -50,16 +49,20 @@ plugins=(git)
 plugins=(zsh-autosuggestions)
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
 
-# 上手く行かなかった...
-# source ~/.zplug/init.zsh
-# zplug="zsh-users/zsh-autosuggestions"
-# zplug load --verbose
+# zplug
+source ~/.zplug/init.zsh
+zplug="zsh-users/zsh-autosuggestions"
+zplug "b4b4r07/emoji-cli", as:plugin
+
+zplug "b4b4r07/enhancd", use:init.sh, as:plugin
+ENHANCD_USE_FUZZY_MATCH=0
+
+zplug load --verbose
 
 source $ZSH/oh-my-zsh.sh
 # chruby
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
-source ~/.zplug/init.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
