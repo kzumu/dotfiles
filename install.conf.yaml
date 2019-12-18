@@ -34,11 +34,13 @@
         path: .SpaceVim.d/init.toml
         force: true
         create: true
+    ~/.tmux.conf:
+        path: .tmux.conf
+        create: true
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - [brew tap Homebrew/bundle, Installing for using Brewfile]
-  - [brew bundle]
   - [git config --global --replace-all ghq.root $GOPATH/src, Set ghq repository path]
   - [mkdir -p ~/go/src/github.com]
   - ["curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim", Install Plug for vim]

@@ -119,3 +119,10 @@ if [ -f '/Users/kaz/.google-cloud-sdk/path.zsh.inc' ]; then . '/Users/kaz/.googl
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/kaz/.google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/kaz/.google-cloud-sdk/completion.zsh.inc'; fi
+
+# Bind
+# function openWithVim() {
+#   vi $(fzf)
+# }
+# zle -N openWithVim
+# bindkey '^V' openWithVim
