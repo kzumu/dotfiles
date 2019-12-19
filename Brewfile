@@ -11,6 +11,7 @@ brew 'cocoapods'
 brew 'ffmpeg'
 brew 'rbenv'
 brew 'xcodegen'
+brew 'reattach-to-user-namespace'
 
 cask 'hammerspoon'
 cask 'openinterminal'
