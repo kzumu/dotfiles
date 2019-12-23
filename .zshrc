@@ -92,6 +92,11 @@ alias yesterday='date -v-1d +%Y%m%d'
 alias g='git'
 alias ga='g add'
 alias recentfile='ls -t | head -1'
+
+# My awesome custom commands
+alias s='~/go/src/github.com/s2mr/Scripts/.build/debug/Scripts'
+alias scripts=s
+
 eval "$(hub alias -s zsh)"
 
 if which swiftenv > /dev/null; then eval "$(swiftenv init -)"; fi
