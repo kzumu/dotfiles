@@ -97,6 +97,7 @@ alias recentfile='ls -t | head -1'
 # My awesome custom commands
 alias s='~/go/src/github.com/s2mr/Scripts/.build/debug/Scripts'
 alias scripts=s
+alias openxc='s xc'
 
 eval "$(hub alias -s zsh)"
 
@@ -104,17 +105,6 @@ if which swiftenv > /dev/null; then eval "$(swiftenv init -)"; fi
 
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-
-function openxc() {
-    if [ -e *.xcworkspace ]; then
-        open *.xcworkspace
-    elif [ -e *.xcodeproj ]; then
-        open *.xcodeproj
-    else
-        echo "xcode file does not exist."
-    fi
-}
 
 # https://github.com/starship/starship
 eval "$(starship init zsh)"
