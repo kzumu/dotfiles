@@ -97,7 +97,7 @@ alias recentfile='ls -t | head -1'
 # My awesome custom commands
 alias s='~/go/src/github.com/s2mr/Scripts/.build/debug/Scripts'
 alias scripts=s
-alias openxc='s xc'
+alias xc='s xc'
 
 eval "$(hub alias -s zsh)"
 
