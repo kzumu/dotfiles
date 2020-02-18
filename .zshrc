@@ -93,6 +93,7 @@ alias yesterday='date -v-1d +%Y%m%d'
 alias g='git'
 alias ga='g add'
 alias recentfile='ls -t | head -1'
+alias fvi='vi $(fzf)'
 
 # My awesome custom commands
 alias s='~/go/src/github.com/s2mr/Scripts/.build/debug/Scripts'
