@@ -1,5 +1,3 @@
-"autocmd BufNewFild,BufRead *.vue setfiletype vue
-
 " insert mode
 inoremap <C-d> <Del>
 inoremap <C-h> <BS>
@@ -17,8 +15,8 @@ nnoremap <leader>w :wa<cr>
 nnoremap <leader>k :bd<cr>
 nnoremap <leader>r :source ~/.vimrc<cr>
 nnoremap <leader>n :Ex.<CR>
-nnoremap <C-h> <S-^> 
-nnoremap <C-l> <S-$>
+nnoremap <C-h> ^
+nnoremap <C-l> $
 noremap <silent> <ESC><ESC> :noh<CR>
 " 改行を挿入してコマンドモードを維持 https://vim-jp.org/vim-users-jp/2009/08/15/Hack-57.html
 nnoremap <C-o> :<C-u>call append(expand('.'), '')<Cr>j
@@ -81,20 +79,36 @@ let &statusline .= '%='
 let &statusline .= '[%{&l:fileencoding == "" ? &encoding : &l:fileencoding}%Y]' 
 let &statusline .= ' %-5.(%l,%c%V%) %P'
 
+if &compatible
+  set nocompatible
+endif
+" Add the dein installation directory into runtimepath
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
+if dein#load_state('~/.cache/dein')
+  call dein#begin('~/.cache/dein')
 
-call plug#begin('~/.vim/plugged')
-Plug 'scrooloose/nerdcommenter'
-Plug 'morhetz/gruvbox'
-Plug 'slim-template/vim-slim'
-Plug 'airblade/vim-gitgutter'
-Plug 'fatih/vim-go'
-Plug 'tpope/vim-fugitive'
-call plug#end()
+  call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
+  call dein#add('Shougo/deoplete.nvim')
+  call dein#add('scrooloose/nerdcommenter')
+  call dein#add('wadackel/vim-dogrun')
+  call dein#add('slim-template/vim-slim')
+  call dein#add('airblade/vim-gitgutter')
+  call dein#add('fatih/vim-go')
+  call dein#add('tpope/vim-fugitive')
+  if !has('nvim')
+    call dein#add('roxma/nvim-yarp')
+    call dein#add('roxma/vim-hug-neovim-rpc')
+  endif
 
+  call dein#end()
+  call dein#save_state()
+endif
 
-colorscheme  gruvbox
+filetype plugin indent on
 syntax enable
+colorscheme dogrun
+
 hi MatchParen cterm=bold ctermbg=239 ctermfg=177
 hi Search ctermbg=177 ctermfg=239
 

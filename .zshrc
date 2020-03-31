@@ -123,3 +123,7 @@ if [ -f '/Users/kaz/.google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/kaz/
 # }
 # zle -N openWithVim
 # bindkey '^V' openWithVim
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+export LC_ALL=en_US.UTF-8
