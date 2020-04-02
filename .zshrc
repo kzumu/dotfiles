@@ -1,19 +1,9 @@
-# If you come from bash you might have to change your $PATH.
+export LC_ALL=en_US.UTF-8
 export XCODE_DEVELOPER_DIR_PATH=/Applications/Xcode.app/Contents/Developer
 export RBENV_ROOT=$HOME/local/rbenv
 export GOPATH=$HOME/go
 export TOP_PAGE_URL="http://localhost:8080"
 export PORT=3000
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=/usr/bin/:$PATH
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-export PATH=$RBENV_ROOT/bin:$HOME/local/bin:$PATH
-export PATH=$HOME/.nodebrew/current/bin:$PATH
-export PATH=/usr/local/go/bin/:$PATH
-export PATH=$GOPATH/bin:$PATH
-export PATH=/Users/kaz/go/src/github.com/flutter/flutter/bin:$PATH
-export PATH=/Users/kaz/Library/Developer/Xamarin/android-sdk-macosx/platform-tools:$PATH
-export PATH=/Users/kaz/Library/Developer/AndroidStudio/platform-tools:$PATH
 
 # CyberAgent
 export PATH=/Users/s06100/Library/Developer/Flutter/bin:$PATH
@@ -38,22 +28,30 @@ export ZSH=$HOME/.oh-my-zsh
 export NVM_DIR="$HOME/.nvm"
 export ANDROID_HOME="/Users/kaz/Library/Developer/AndroidStudio"
 
-ZSH_THEME="avit"
-
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
-
 plugins=(zsh-autosuggestions)
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
+ZSH_THEME="avit"
+
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=/usr/bin/:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=$RBENV_ROOT/bin:$HOME/local/bin:$PATH
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+export PATH=/usr/local/go/bin/:$PATH
+export PATH=$GOPATH/bin:$PATH
+export PATH=/Users/kaz/go/src/github.com/flutter/flutter/bin:$PATH
+export PATH=/Users/kaz/Library/Developer/Xamarin/android-sdk-macosx/platform-tools:$PATH
+export PATH=/Users/kaz/Library/Developer/AndroidStudio/platform-tools:$PATH
 
 # zplug
 source ~/.zplug/init.zsh
 zplug="zsh-users/zsh-autosuggestions"
 zplug "b4b4r07/emoji-cli", as:plugin
-
 zplug "b4b4r07/enhancd", use:init.sh, as:plugin
 ENHANCD_USE_FUZZY_MATCH=0
 
@@ -66,7 +64,8 @@ source /usr/local/share/chruby/auto.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-function peco-ghq-cd () {
+### Register Widget ###
+function _peco-ghq-cd () {
     local selected_dir=$(ghq list | peco --query "$LBUFFER")
     if [ -n "$selected_dir" ]; then
         selected_dir="`ghq root`/$selected_dir"
@@ -74,8 +73,23 @@ function peco-ghq-cd () {
     fi
     zle clear-screen
 }
-zle -N peco-ghq-cd
-bindkey '^f' peco-ghq-cd
+zle -N _peco-ghq-cd
+
+function _git-pull-origin-master () {
+  echo git pull origin master
+  git pull origin master
+  zle accept-line
+}
+zle -N _git-pull-origin-master
+
+function _fzf () { fzf }
+zle -N _fzf
+### Register Widget ###
+
+bindkey -v
+# bindkey '^l' _fzf
+bindkey '^F' _peco-ghq-cd
+bindkey '^G^P^M' _git-pull-origin-master
 
 alias cdpj=$HOME/Documents/Project
 alias cdgo='cd $GOPATH/src/github.com/kzumu'
@@ -111,19 +125,11 @@ if which swiftenv > /dev/null; then eval "$(swiftenv init -)"; fi
 eval "$(starship init zsh)"
 eval "$(rbenv init -)"
 
-# The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/kaz/.google-cloud-sdk/path.zsh.inc' ]; then . '/Users/kaz/.google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
 if [ -f '/Users/kaz/.google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/kaz/.google-cloud-sdk/completion.zsh.inc'; fi
 
-# Bind
-# function openWithVim() {
-#   vi $(fzf)
-# }
-# zle -N openWithVim
-# bindkey '^V' openWithVim
+if [ -e /usr/local/share/zsh-completions ]; then
+      fpath=(/usr/local/share/zsh-completions $fpath)
+fi
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-export LC_ALL=en_US.UTF-8
