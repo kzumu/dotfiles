@@ -25,15 +25,14 @@ export ZSH_HISTORY_KEYBIND_ARROW_DOWN="^n"
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-export NVM_DIR="$HOME/.nvm"
 export ANDROID_HOME="/Users/kaz/Library/Developer/AndroidStudio"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
-plugins=(zsh-autosuggestions)
+plugins=(git zsh-autosuggestions zsh-completions)
+autoload -U compinit && compinit
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
 ZSH_THEME="avit"
 
@@ -86,7 +85,7 @@ function _fzf () { fzf }
 zle -N _fzf
 ### Register Widget ###
 
-bindkey -v
+# bindkey -v
 # bindkey '^l' _fzf
 bindkey '^F' _peco-ghq-cd
 bindkey '^G^P^M' _git-pull-origin-master
@@ -117,9 +116,6 @@ alias xc='s xc'
 eval "$(hub alias -s zsh)"
 
 if which swiftenv > /dev/null; then eval "$(swiftenv init -)"; fi
-
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # https://github.com/starship/starship
 eval "$(starship init zsh)"
