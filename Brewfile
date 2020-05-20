@@ -13,4 +13,6 @@ brew 'rbenv'
 brew 'xcodegen'
 brew 'tmux'
 brew 'reattach-to-user-namespace'
+brew 'starship'
+brew 'keepassxc'
 

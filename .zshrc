@@ -86,7 +86,7 @@ function _fzf () { fzf }
 zle -N _fzf
 ### Register Widget ###
 
-bindkey -v
+# bindkey -v
 # bindkey '^l' _fzf
 bindkey '^F' _peco-ghq-cd
 bindkey '^G^P^M' _git-pull-origin-master
