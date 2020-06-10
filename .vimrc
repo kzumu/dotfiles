@@ -31,15 +31,25 @@ function! s:VSetSearch()
   let @s = temp
 endfunction
 
-set showmatch
-set matchtime=1
-set matchpairs& matchpairs+=<:>
+scriptencoding utf-8
+set expandtab " タブ入力を複数の空白入力に置き換える
+set tabstop=4 " 画面上でタブ文字が占める幅
+set softtabstop=4 " 連続した空白に対してタブキーやバックスペースキーでカーソルが動く幅
+set autoindent " 改行時に前の行のインデントを継続する
+set smartindent " 改行時に前の行の構文をチェックし次の行のインデントを増減する
+set shiftwidth=4 " smartindentで増減する幅
+set ambiwidth=double " □や○文字が崩れる問題を解決
 set autoread
 set background=dark
 set bs=start
+set conceallevel=0
 set enc=utf8
+set encoding=utf-8
 set expandtab
 set fenc=utf-8
+set fileencoding=utf-8 " 保存時の文字コード
+set fileencodings=ucs-boms,utf-8,euc-jp,cp932 " 読み込み時の文字コードの自動判別. 左側が優先される
+set fileformats=unix,dos,mac " 改行コードの自動判別. 左側が優先される
 set hidden
 set history=100
 set hlsearch
@@ -47,11 +57,15 @@ set ignorecase
 set incsearch
 set isk+=-
 set lazyredraw
+set matchpairs& matchpairs+=<:>
+set matchtime=1
 set nobackup
 set noswapfile
+set nowrapscan
 set number
 set shiftwidth=2
 set showcmd
+set showmatch
 set tabstop=2
 set ttyfast
 set updatetime=100
@@ -59,8 +73,9 @@ set visualbell
 set wildmenu
 set wildmode=full
 set wrap
-set nowrapscan
-set conceallevel=0
+set cursorline " カーソルラインをハイライト
+set showmatch " 括弧の対応関係を一瞬表示する
+set wildmenu " コマンドモードの補完
 
 " オムニ補完の設定（insertモードでCtrl+oで候補を出す、Ctrl+n
 " Ctrl+pで選択、Ctrl+yで確定）
@@ -90,7 +105,6 @@ if dein#load_state('~/.cache/dein')
   call dein#begin('~/.cache/dein')
 
   call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
-  call dein#add('Shougo/deoplete.nvim')
   call dein#add('scrooloose/nerdcommenter')
   call dein#add('wadackel/vim-dogrun')
   call dein#add('slim-template/vim-slim')
@@ -102,6 +116,9 @@ if dein#load_state('~/.cache/dein')
   call dein#add('tyru/open-browser.vim')
   call dein#add('Shougo/neosnippet')
   call dein#add('Shougo/neosnippet-snippets')
+  call dein#add('Yggdroot/indentLine')
+
+  call dein#add('Shougo/deoplete.nvim')
   if !has('nvim')
     call dein#add('roxma/nvim-yarp')
     call dein#add('roxma/vim-hug-neovim-rpc')

@@ -111,15 +111,18 @@ alias fvi='vi $(fzf)'
 # My awesome custom commands
 alias s='~/go/src/github.com/s2mr/Scripts/.build/debug/Scripts'
 alias scripts=s
-alias xc='s xc'
+alias xc='cargo run --quiet --manifest-path ~/go/src/github.com/kzumu/playground/rust/cli/Cargo.toml xc'
 
-eval "$(hub alias -s zsh)"
+# eval "$(hub alias -s zsh)"
 
 if which swiftenv > /dev/null; then eval "$(swiftenv init -)"; fi
 
 # https://github.com/starship/starship
 eval "$(starship init zsh)"
 eval "$(rbenv init -)"
+
+# https://github.com/anyenv/anyenv
+eval "$(anyenv init -)"
 
 if [ -f '/Users/kaz/.google-cloud-sdk/path.zsh.inc' ]; then . '/Users/kaz/.google-cloud-sdk/path.zsh.inc'; fi
 if [ -f '/Users/kaz/.google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/kaz/.google-cloud-sdk/completion.zsh.inc'; fi

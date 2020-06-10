@@ -1,6 +1,7 @@
 brew 'go'
 brew 'peco'
 brew 'ghq'
+brew 'fzf'
 brew 'swiftformat'
 brew 'swiftlint'
 brew 'carthage'
