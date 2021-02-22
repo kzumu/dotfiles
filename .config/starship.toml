@@ -1,31 +1,44 @@
 # https://starship.rs/config/#command-duration
 
-prompt_order = [
-    "username",
-    "hostname",
-    "directory",
-    "git_branch",
-    "git_state",
-    "git_status",
-    "package",
-    "nix_shell",
-    "line_break",
-    "jobs",
-    "time",
-    "battery",
-    "character",
-]
+format = """\
+  $username\
+  $hostname\
+  $directory\
+  $git_branch\
+  $git_commit\
+  $git_state\
+  $git_status\
+  $swift\
+  $rust\
+  $ruby\
+  $python\
+  $nodejs\
+  $kotlin\
+  $golang\
+  $elixir\
+  $dart\
+  $nix_shell\
+  $conda\
+  $memory_usage\
+  $nix_shell\
+  $custom\
+  $line_break\
+  $jobs\
+  $time\
+  $battery\
+  $character\
+  """
 
-# Replace the "❯" symbol in the prompt with "➜"
-[character]      # The name of the module we are confguring is "character"
-symbol = "➜"     # The "symbol" segment is being set to "➜"
-
-# Disable the package module, hiding it from the prompt completely
-[package]
-disabled = true
+[character]
+success_symbol = "[➜](bold green)"
+error_symbol = "[➜](bold red)"
+vicmd_symbol = "[❮](bold green)"
 
 [git_branch]
 symbol = ""
+
+[git_commit]
+tag_disabled = false
 
 [git_status]
 conflicted = "🏳"
@@ -43,3 +56,30 @@ deleted = "🗑"
 truncation_length = 8
 truncate_to_repo = false
 fish_style_pwd_dir_length = 4
+
+[swift]
+format = "[SWIFT $version](bold purple) "
+
+[rust]
+format = "[RUST $version](bold purple) "
+
+[ruby]
+format = "[RUBY $version](bold red) "
+
+[python]
+format = "[PYTHON $version](bold purple) "
+
+[nodejs]
+format = "[NODE $version](bold yellow) "
+
+[kotlin]
+format = "[KOTLIN $version](bold purple) "
+
+[golang]
+format = "[GO $version](bold purple) "
+
+[elixir]
+format = "[ELIXIR $version](bold purple) "
+
+[dart]
+format = "[DART $version](bold purple) "

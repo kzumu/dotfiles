@@ -105,13 +105,22 @@ alias today='date +%Y%m%d'
 alias yesterday='date -v-1d +%Y%m%d'
 alias g='git'
 alias ga='g add'
+alias gb='g browse'
 alias recentfile='ls -t | head -1'
+alias vi='/usr/local/bin/vim'
 alias fvi='vi $(fzf)'
+alias bell='afplay /System/Library/Sounds/Hero.aiff'
 
 # My awesome custom commands
 alias s='~/go/src/github.com/s2mr/Scripts/.build/debug/Scripts'
 alias scripts=s
 alias xc='cargo run --quiet --manifest-path ~/go/src/github.com/s2mr/playground/rust/cli/Cargo.toml xc'
+
+_notify-done() {
+  bell & osascript -e 'display notification "Process is done!" with title "Terminal"'
+}
+alias notify-done=_notify-done
+
 
 eval "$(hub alias -s zsh)"
 
@@ -132,3 +141,13 @@ if [ -e /usr/local/share/zsh-completions ]; then
 fi
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/s06100/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/s06100/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/s06100/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/s06100/google-cloud-sdk/completion.zsh.inc'; fi
+
+# tabtab source for packages
+# uninstall by removing these lines
+[[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true

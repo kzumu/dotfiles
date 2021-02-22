@@ -95,6 +95,10 @@ let &statusline .= '%='
 let &statusline .= '[%{&l:fileencoding == "" ? &encoding : &l:fileencoding}%Y]' 
 let &statusline .= ' %-5.(%l,%c%V%) %P'
 
+" ----- dein (https://github.com/Shougo/dein.vim#unixlinux-or-mac-os-x)
+
+let g:python3_host_prog = 1
+
 if &compatible
   set nocompatible
 endif
@@ -123,17 +127,20 @@ if dein#load_state('~/.cache/dein')
     call dein#add('roxma/nvim-yarp')
     call dein#add('roxma/vim-hug-neovim-rpc')
   endif
+  let g:deoplete#enable_at_startup = 1
 
   call dein#end()
   call dein#save_state()
 endif
 
-" let g:deoplete#enable_at_startup = 1
+filetype plugin indent on
+syntax enable
+
+" ----- dein
+
 let g:vim_markdown_folding_disabled = 1
 let g:neosnippet#enable_snipmate_compatibility = 1
 let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
-filetype plugin indent on
-syntax enable
 colorscheme dogrun
 
 hi MatchParen cterm=bold ctermbg=239 ctermfg=177
