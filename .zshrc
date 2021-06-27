@@ -110,6 +110,9 @@ alias recentfile='ls -t | head -1'
 alias vi='/usr/local/bin/vim'
 alias fvi='vi $(fzf)'
 alias bell='afplay /System/Library/Sounds/Hero.aiff'
+alias repo='gh repo view --web'
+alias pr='gh pr view --web'
+alias prs=' gh pr list --web'
 
 # My awesome custom commands
 alias s='~/go/src/github.com/s2mr/Scripts/.build/debug/Scripts'
