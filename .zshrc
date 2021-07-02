@@ -48,18 +48,18 @@ export PATH=/Users/kaz/Library/Developer/Xamarin/android-sdk-macosx/platform-too
 export PATH=/Users/kaz/Library/Developer/AndroidStudio/platform-tools:$PATH
 
 # zplug
-source ~/.zplug/init.zsh
+# source ~/.zplug/init.zsh
 zplug="zsh-users/zsh-autosuggestions"
-zplug "b4b4r07/emoji-cli", as:plugin
-zplug "b4b4r07/enhancd", use:init.sh, as:plugin
+# zplug "b4b4r07/emoji-cli", as:plugin
+# zplug "b4b4r07/enhancd", use:init.sh, as:plugin
 ENHANCD_USE_FUZZY_MATCH=0
 
-zplug load --verbose
+# zplug load --verbose
 
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
 # chruby
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
+# source /usr/local/share/chruby/chruby.sh
+# source /usr/local/share/chruby/auto.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -130,8 +130,8 @@ eval "$(hub alias -s zsh)"
 if which swiftenv > /dev/null; then eval "$(swiftenv init -)"; fi
 
 # https://github.com/starship/starship
-eval "$(starship init zsh)"
-eval "$(rbenv init -)"
+# eval "$(starship init zsh)"
+# eval "$(rbenv init -)"
 
 # https://github.com/anyenv/anyenv
 eval "$(anyenv init -)"
